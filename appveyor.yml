@@ -1,3 +1,8 @@
+version: 1.0.{build}
+image: Ubuntu1804
+build:
+  verbosity: minimal
+
 environment:
   access_token:
     secure: UBILkyBUiXnqv1n34QG2KQ3 / b8aBtpdFG78y5MWoG4 + ehwAGItWl2bkaSylpoDg2
@@ -5,6 +10,7 @@ environment:
 install:
   - node --version
   - npm --version
+  - npm install hexo --save
   - npm install hexo-cli -g
   - npm install
   - npm install hexo-deployer-git --save
