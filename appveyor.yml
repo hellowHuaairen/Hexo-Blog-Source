@@ -1,6 +1,3 @@
-version: 1.0.{build}
-image: Ubuntu1804
-
 environment:
   access_token:
     secure: UBILkyBUiXnqv1n34QG2KQ3 / b8aBtpdFG78y5MWoG4 + ehwAGItWl2bkaSylpoDg2
