@@ -1,7 +1,5 @@
 version: 1.0.{build}
 image: Ubuntu1804
-build:
-  verbosity: minimal
 
 environment:
   access_token:
