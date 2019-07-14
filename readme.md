@@ -1,7 +1,7 @@
 # 简介
 该仓库是我的个人博客本地所有文件，作以备份。
 
-博客地址：[mculover666.cn](http://mculover666.cn)
+博客地址：[www.mculover666.cn](https://www.mculover666.cn)
 
 # 注意
 该仓库中的文件不包含hexo的安装文件。
