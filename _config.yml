@@ -90,7 +90,7 @@ deploy:
   type: git
   repo: 
     github: https://github.com/Mculover666/mculover666.github.io.git,master
-    coding: https://git.dev.tencent.com/mculover666/mculover666.git,master
+#    coding: https://git.dev.tencent.com/mculover666/mculover666.git,master
 
 #algolia setting
 algolia:
