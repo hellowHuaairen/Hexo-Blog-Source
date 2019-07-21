@@ -25,9 +25,9 @@ categories:
 
 物联网平台下可以负责设备管理，上可以负责对接应用，甚至我们都不需要写一行代码，是整个项目中的关键，所以选择一个好的物联网平台非常重要，目前主流的有：
 
-- 华为云：[OceanConnect平台]()
-- 阿里云：[]()
-- 中国移动：[Onenet平台]()
+- 华为云：[OceanConnect平台](https://iot-dev.huaweicloud.com)
+- 阿里云：[阿里云物联网平台](https://iot.console.aliyun.com)
+- 中国移动：[Onenet平台](https://open.iot.10086.cn)
 
 ## 通信模组 + TCP/IP协议栈 + 物联网操作系统
 
