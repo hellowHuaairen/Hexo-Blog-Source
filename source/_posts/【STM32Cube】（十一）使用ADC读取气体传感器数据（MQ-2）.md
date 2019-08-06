@@ -7,6 +7,10 @@ tags:
 categories:
     STM32CubeMX
 ---
+
+本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的ADC外设，读取MQ-2气体传感器的数据并通过串口发送。
+<!--more-->
+
 # 1. 准备工作
 ## 硬件准备
 - 开发板
@@ -116,5 +120,5 @@ int main(void)
     }
 }
 ```
-
+![mark](http://mculover666.cn/image/20190806/6jtuYrH0Mdot.png?imageslim)
 
