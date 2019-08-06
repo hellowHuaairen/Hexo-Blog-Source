@@ -1,3 +1,12 @@
+---
+title: 【STM32Cube】（十一）使用ADC读取气体传感器数据（MQ-2）
+date: 2019-08-06 16:48:56
+tags:
+    STM32CubeMX
+    气体传感器MQ-2
+categories:
+    STM32CubeMX
+---
 # 1. 准备工作
 ## 硬件准备
 - 开发板
