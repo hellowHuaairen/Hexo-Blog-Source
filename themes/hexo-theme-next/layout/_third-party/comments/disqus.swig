@@ -1,4 +1,4 @@
-{% if theme.disqus.count %}
+{%- if theme.disqus.count %}
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');
@@ -9,24 +9,31 @@
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
 </script>
-{% endif %}
-{% if page.comments %}
+{%- endif %}
+{%- if page.comments %}
 <script>
   var disqus_config = function() {
     this.page.url = {{ page.permalink | json }};
     this.page.identifier = {{ page.path | json }};
     this.page.title = '{{ page.title | addslashes }}';
-    {% if __('disqus') !== 'disqus' -%}
+    {%- if __('disqus') !== 'disqus' -%}
       this.language = '{{ __('disqus') }}';
     {% endif -%}
   };
   function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://{{ theme.disqus.shortname }}.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
   }
-  {% if theme.disqus.lazyload %}
+  {%- if theme.disqus.lazyload %}
     $(function() {
       var offsetTop = $('#comments').offset().top - $(window).height();
       if (offsetTop <= 0) {
@@ -48,6 +55,6 @@
     });
   {% else %}
     window.addEventListener('load', loadComments, false);
-  {% endif %}
+  {%- endif %}
 </script>
-{% endif %}
+{%- endif %}

@@ -74,7 +74,7 @@ STM32L431 的 ADC 最大的转换速率为 5.33Mhz，也就是转换时间为 0.
 STM32L4的最高主频到80M，所以配置PLL，最后使`HCLK = 80Mhz`即可：
 ![mark](http://mculover666.cn/image/20190806/1TQg7frjRpVr.png?imageslim)
 
-![mark](http://mculover666.cn/image/20190806/OG0eoA2puN1C.png?imageslim)
+![mark](http://mculover666.cn/image/20190808/EVKCwrQNEWcl.png?imageslim)
 
 ![mark](http://mculover666.cn/image/20190806/Dje8nuTMdpQY.png?imageslim)
 

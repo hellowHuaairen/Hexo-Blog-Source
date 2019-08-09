@@ -1,21 +1,15 @@
-{% if theme.mermaid.enable %}
-<script>
+{%- if theme.mermaid.enable %}
+<script{{ pjax }}>
 if ($('body').find('pre.mermaid').length) {
-  $.ajax({
-    type: 'GET',
-    url: '{{ theme.mermaid.cdn }}',
-    dataType: 'script',
-    cache: true,
-    success: function() {
-      mermaid.initialize({
-        theme: '{{ theme.mermaid.theme }}',
-        logLevel: 3,
-        flowchart: { curve: 'linear' },
-        gantt: { axisFormat: '%m/%d/%Y' },
-        sequence: { actorMargin: 50 }
-      });
-    }
-  });
+  NexT.utils.getScript('{{ theme.mermaid.cdn }}', function() {
+    mermaid.initialize({
+      theme: '{{ theme.mermaid.theme }}',
+      logLevel: 3,
+      flowchart: { curve: 'linear' },
+      gantt: { axisFormat: '%m/%d/%Y' },
+      sequence: { actorMargin: 50 }
+    });
+  }, window.mermaid);
 }
 </script>
-{% endif %}
+{%- endif %}

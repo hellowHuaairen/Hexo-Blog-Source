@@ -1,10 +1,10 @@
 /* global NexT, CONFIG */
 
-$(document).ready(function() {
+$(document).on('DOMContentLoaded', function() {
 
   var sidebarToggleLines = {
     lines: [],
-    push: function(line) {
+    push : function(line) {
       this.lines.push(line);
     },
     init: function() {
@@ -94,7 +94,7 @@ $(document).ready(function() {
 
   var SIDEBAR_WIDTH = CONFIG.sidebar.width || '320px';
   var SIDEBAR_DISPLAY_DURATION = 200;
-  var mousePos = {}, touchPos = {};
+  var mousePos = {}; var touchPos = {};
 
   var sidebarToggleMotion = {
     sidebarEl       : $('.sidebar'),
@@ -105,7 +105,8 @@ $(document).ready(function() {
       $('body')
         .on('mousedown', this.mousedownHandler.bind(this))
         .on('mouseup', this.mouseupHandler.bind(this));
-      $('#sidebar-dimmer').on('click', this.clickHandler.bind(this));
+      $('#sidebar-dimmer')
+        .on('click', this.clickHandler.bind(this));
       $('.sidebar-toggle')
         .on('click', this.clickHandler.bind(this))
         .on('mouseenter', this.mouseEnterHandler.bind(this))
@@ -116,14 +117,9 @@ $(document).ready(function() {
         .on('touchmove', function(e) {
           e.preventDefault();
         });
-
       $(document)
-        .on('sidebar.isShowing', function() {
-          NexT.utils.isDesktop() && $('body').stop().animate(
-            isRight ? {'padding-right': SIDEBAR_WIDTH} : {'padding-left': SIDEBAR_WIDTH},
-            SIDEBAR_DISPLAY_DURATION
-          );
-        });
+        .on('sidebar:show', this.showSidebar.bind(this))
+        .on('sidebar:hide', this.hideSidebar.bind(this));
     },
     mousedownHandler: function(e) {
       mousePos.X = e.pageX;
@@ -132,13 +128,13 @@ $(document).ready(function() {
     mouseupHandler: function(e) {
       var deltaX = e.pageX - mousePos.X;
       var deltaY = e.pageY - mousePos.Y;
-      if (this.isSidebarVisible && Math.sqrt(deltaX * deltaX + deltaY * deltaY) < 20 && $(e.target).is('.main')) {
-        this.clickHandler();
+      var clickingBlankPart = Math.sqrt((deltaX * deltaX) + (deltaY * deltaY)) < 20 && $(e.target).is('.main');
+      if (this.isSidebarVisible && (clickingBlankPart || $(e.target).is('img.medium-zoom-image, .fancybox img'))) {
+        this.hideSidebar();
       }
     },
     clickHandler: function() {
       this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();
-      this.isSidebarVisible = !this.isSidebarVisible;
     },
     mouseEnterHandler: function() {
       if (!this.isSidebarVisible) {
@@ -157,13 +153,14 @@ $(document).ready(function() {
     touchendHandler: function(e) {
       var deltaX = e.originalEvent.changedTouches[0].clientX - touchPos.X;
       var deltaY = e.originalEvent.changedTouches[0].clientY - touchPos.Y;
-      if (Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight))) {
-        this.clickHandler();
+      var effectiveSliding = Math.abs(deltaY) < 20 && ((deltaX > 30 && isRight) || (deltaX < -30 && !isRight));
+      if (this.isSidebarVisible && effectiveSliding) {
+        this.hideSidebar();
       }
     },
     showSidebar: function() {
+      this.isSidebarVisible = true;
       var self = this;
-      sidebarToggleLines.close();
 
       if ($.isFunction($('html').velocity)) {
         this.sidebarEl.stop().velocity({
@@ -174,15 +171,15 @@ $(document).ready(function() {
           begin   : function() {
             $('.sidebar .motion-element').not('.site-state').velocity(
               isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-                stagger : 50,
-                drag    : true
+                stagger: 50,
+                drag   : true
               }
             );
             $('.site-state').velocity(
               isRight ? 'transition.slideRightIn' : 'transition.slideLeftIn', {
-                stagger : 50,
-                drag    : true,
-                display : 'flex'
+                stagger: 50,
+                drag   : true,
+                display: 'flex'
               }
             );
           },
@@ -193,21 +190,23 @@ $(document).ready(function() {
       } else {
         $('.sidebar .motion-element').show();
         this.sidebarEl.stop().animate({
-          width: SIDEBAR_WIDTH,
+          width  : SIDEBAR_WIDTH,
           display: 'block'
         }, SIDEBAR_DISPLAY_DURATION, function() {
           self.sidebarEl.addClass('sidebar-active');
         });
       }
 
-      this.sidebarEl.trigger('sidebar.isShowing');
+      sidebarToggleLines.close();
+      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': SIDEBAR_WIDTH} : {'padding-left': SIDEBAR_WIDTH}, SIDEBAR_DISPLAY_DURATION);
     },
     hideSidebar: function() {
-      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': 0} : {'padding-left': 0});
+      this.isSidebarVisible = false;
       this.sidebarEl.find('.motion-element').hide();
       this.sidebarEl.stop().animate({width: 0, display: 'none'}).removeClass('sidebar-active');
 
       sidebarToggleLines.init();
+      NexT.utils.isDesktop() && $('body').stop().animate(isRight ? {'padding-right': 0} : {'padding-left': 0});
 
       // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
       if ($('.post-toc-wrap')) {
