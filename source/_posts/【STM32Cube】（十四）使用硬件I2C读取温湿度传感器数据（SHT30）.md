@@ -1,6 +1,6 @@
 ---
 title: 【STM32Cube】（十四）使用硬件I2C读取温湿度传感器数据（SHT30）
-date: 2019-08-08 10:48:56
+date: 2019-08-10 10:48:56
 tags:
     STM32CubeMX
     温湿度传感器
@@ -101,8 +101,8 @@ SHT30的器件地址由`ADDR`端口的高低电平决定：
 ```c
 /* ADDR Pin Conect to VSS */
 
-#define	SHT30_ADDR_WRITE	0x44<<7         //10001000
-#define	SHT30_ADDR_READ		(0x44<<7)+1	    //10001011
+#define	SHT30_ADDR_WRITE	0x44<<1         //10001000
+#define	SHT30_ADDR_READ		(0x44<<1)+1	    //10001011
 ```
 ### 枚举SHT30命令列表
 参考数据手册给出如下枚举定义：
@@ -144,7 +144,8 @@ typedef enum
     HIGH_10_CMD    = 0x2737,
     MEDIUM_10_CMD  = 0x2721,
     LOW_10_CMD     = 0x272A,
-	
+	/* 周期测量模式读取数据命令 */
+	READOUT_FOR_PERIODIC_MODE = 0xE000,
 } SHT30_CMD;
 ```
 ### 发送命令函数
@@ -180,19 +181,163 @@ void SHT30_reset(void)
 /**
  * @brief	初始化SHT30
  * @param	none
- * @retval	none
+ * @retval	成功返回HAL_OK
  * @note	周期测量模式
 */
-void SHT30_Init(void)
+uint8_t SHT30_Init(void)
 {
-    SHT30_Send_Cmd(MEDIUM_2_CMD);
+    return SHT30_Send_Cmd(MEDIUM_2_CMD);
 }
 ```
-### SHT30数据8位CRC校验
-在数据手册中可知，SHTY30分别在温度数据和湿度数据之后发送了8-CRC校验码，确保了数据可靠性，接下来编写8-CRC校验代码：
-```c
+### 从SHTY30读取一次数据（周期测量模式下）
+从SHT30数据手册中可以得到在周期测量模式下读取一次数据的时序，如图：
 
+![mark](http://mculover666.cn/image/20190810/et530Xi83sku.png?imageslim)
+
+根据该时序可以看出，首先要发送读数据的命令，然后接收6个字节的数据，编写程序如下：
+```c
+/**
+ * @brief	从SHT30读取一次数据
+ * @param	dat —— 存储读取数据的地址（6个字节数组）
+ * @retval	成功 —— 返回HAL_OK
+*/
+uint8_t SHT30_Read_Dat(uint8_t* dat)
+{
+	SHT30_Send_Cmd(READOUT_FOR_PERIODIC_MODE);
+	return HAL_I2C_Master_Receive(&hi2c1, SHT30_ADDR_READ, dat, 6, 0xFFFF);
+}
+```
+### 从接收数据中校验并解析温度值和湿度值
+在数据手册中可知，SHTY30分别在温度数据和湿度数据之后发送了8-CRC校验码，确保了数据可靠性。
+
+关于CRC校验请参考我的另一篇博客：[如何通俗的理解CRC校验并用C语言实现](https://www.mculover666.cn/2019/08/09/%E5%A6%82%E4%BD%95%E9%80%9A%E4%BF%97%E7%9A%84%E7%90%86%E8%A7%A3CRC%E6%A0%A1%E9%AA%8C%E5%B9%B6%E7%94%A8C%E8%AF%AD%E8%A8%80%E5%AE%9E%E7%8E%B0/)。
+
+CRC-8校验程序如下：
+```c
+#define CRC8_POLYNOMIAL 0x31
+
+uint8_t CheckCrc8(uint8_t* const message, uint8_t initial_value)
+{
+    uint8_t  remainder;	    //余数
+    uint8_t  i = 0, j = 0;  //循环变量
+
+    /* 初始化 */
+    remainder = initial_value;
+
+    for(j = 0; j < 2;j++)
+    {
+        remainder ^= message[j];
+
+        /* 从最高位开始依次计算  */
+        for (i = 0; i < 8; i++)
+        {
+            if (remainder & 0x80)
+            {
+                remainder = (remainder << 1)^CRC8_POLYNOMIAL;
+            }
+            else
+            {
+                remainder = (remainder << 1);
+            }
+        }
+    }
+
+    /* 返回计算的CRC码 */
+    return remainder;
+}
+```
+计算温度值和湿度值的公式在数据手册中已给出，如图：
+
+![mark](http://mculover666.cn/image/20190810/akji0RTvX77c.png?imageslim)
+
+接下来编写解析数据的函数：
+```c
+/**
+ * @brief	将SHT30接收的6个字节数据进行CRC校验，并转换为温度值和湿度值
+ * @param	dat  —— 存储接收数据的地址（6个字节数组）
+ * @retval	校验成功  —— 返回0
+ * 			校验失败  —— 返回1，并设置温度值和湿度值为0
+*/
+uint8_t SHT30_Dat_To_Float(uint8_t* const dat, float* temperature, float* humidity)
+{
+	uint16_t recv_temperature = 0;
+	uint16_t recv_humidity = 0;
+	
+	/* 校验温度数据和湿度数据是否接收正确 */
+	if(CheckCrc8(dat, 0xFF) != dat[2] || CheckCrc8(&dat[3], 0xFF) != dat[5])
+		return 1;
+	
+	/* 转换温度数据 */
+	recv_temperature = ((uint16_t)dat[0]<<8)|dat[1];
+	*temperature = -45 + 175*((float)recv_temperature/65535);
+	
+	/* 转换湿度数据 */
+	recv_humidity = ((uint16_t)dat[3]<<8)|dat[4];
+	*humidity = 100 * ((float)recv_humidity / 65535);
+	
+	return 0;
+}
 ```
 
+## 编写测试SHT30驱动程序的代码
+在main函数中对该驱动进行测试，在`main.c`中添加如下代码：
+```c
+#include <stdio.h>
+#include "sht30_i2c_drv.h"
 
+int main(void)
+{
+    /* USER CODE BEGIN 1 */
+    uint8_t recv_dat[6] = {0};
+    float temperature = 0.0;
+    float humidity = 0.0;
+    /* USER CODE END 1 */
+
+    HAL_Init();
+
+    SystemClock_Config();
+
+    MX_GPIO_Init();
+    MX_I2C1_Init();
+    MX_USART1_UART_Init();
+
+    /* USER CODE BEGIN 2 */
+    SHT30_Reset();
+    if(SHT30_Init() == HAL_OK)
+        printf("sht30 init ok.\n");
+    else
+        printf("sht30 init fail.\n");
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+    /* USER CODE END WHILE */
+		
+    /* USER CODE BEGIN 3 */
+		HAL_Delay(1000);
+		if(SHT30_Read_Dat(recv_dat) == HAL_OK)
+		{
+			if(SHT30_Dat_To_Float(recv_dat, &temperature, &humidity)==0)
+			{
+				printf("temperature = %f, humidity = %f\n", temperature, humidity);
+			}
+			else
+			{
+				printf("crc check fail.\n");
+			}
+		}
+		else
+		{
+			printf("read data from sht30 fail.\n");
+		}
+	}
+  /* USER CODE END 3 */
+}
+
+```
+测试结果如图：
+
+![mark](http://mculover666.cn/image/20190810/vlDKzTOJ8cBE.png?imageslim)
 

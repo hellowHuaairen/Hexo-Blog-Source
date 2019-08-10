@@ -1,5 +1,5 @@
 ---
-title: 如何通俗的理解CRC校验并用C语言实现.md
+title: 如何通俗的理解CRC校验并用C语言实现
 date: 2019-08-09 10:16:24
 tags:
     CRC校验
@@ -139,7 +139,7 @@ $$
 ```c
 #include <stdint.h>
 
-#define POLYNOMIAL 0xC8  /* 11011后面补0凑8位数：11011000*/
+#define CRC4_POLYNOMIAL 0xC8   /* 11011后面补0凑8位数：11011000*/
 
 uint8_t CheckCrc4(uint8_t const message)
 {
@@ -191,6 +191,8 @@ int main(void)
 ### CRC8
 根据一个字节数据的CRC校验实现思想，两个字节或多个字节的数据也是同样的道理，加一层循环就可以了，代码实现如下：
 ```c
+#define CRC8_POLYNOMIAL 0x31
+
 uint8_t CheckCrc8(uint8_t* const message, uint8_t initial_value)
 {
     uint8_t  remainder;	    //余数
