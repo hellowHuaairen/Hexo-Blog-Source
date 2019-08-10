@@ -1,5 +1,5 @@
 ---
-title: 【STM32Cube_01】初识 STM32 Cube  Ecosystem（STM32 Cube 生态系统）
+title: 【STM32Cube_01】初识 STM32Cube 生态系统
 date: 2019-07-22 16:48:56
 tags:
     STM32CubeMX
