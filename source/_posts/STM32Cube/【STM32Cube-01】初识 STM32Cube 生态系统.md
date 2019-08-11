@@ -10,9 +10,6 @@ categories:
 本篇文章主要介绍STM32Cube生态系统。
 <!--more-->
 
->现在人工智能非常火爆，一般的教程都是为博硕生准备的，太难看懂了，分享一个非常适合小白入门的教程，不仅通俗易懂而且还很风趣幽默，点☞[这里](https://www.cbedai.net/mculover666
-)​​​​​​​☜进入传送门~
-
 # STM32Cube Ecosystem
 [STM32Cube](https://www.st.com/content/st_com/en/stm32cube-ecosystem.html)是ST公司开发的一套生态系统，致力于使STM32的开发变的更简单，并且100%开源免费。
 
@@ -103,3 +100,7 @@ STM32Cube提供初步写好的用户代码，开发者可以在此基础上开�
 
 
 至此，对STM32Cube生态系统的介绍完毕，下一节讲述如何获取STM32Cube生态系统中的PC tools和Embeded Software。
+
+**<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
+
+![mark](http://mculover666.cn/image/20190811/gKNrs8CqezFQ.jpg?imageslim)
