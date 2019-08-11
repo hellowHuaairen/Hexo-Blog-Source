@@ -14,7 +14,7 @@ categories:
 
 ![mark](http://mculover666.cn/image/20190811/cl1vFBW5yuSq.png?imageslim)
 
-为了确保资源的更新，我没有直接放上链接，可以在**文末**关注我的微信公众号，在下方菜单栏选择`资源整理`获取，敬请原谅~
+为了确保资源的更新，我没有直接放上链接，可以在**文末**关注我的微信公众号，回复“**STM32CubeMX**”获取，敬请原谅~
 
 # 1.安装Java环境（JRE）
 因为STM32CubeMX是采用Java语言编写的，所以需要**先在电脑上安装Java运行环境**（JRE，Java runtime Environment），安装JRE时建议**选择Java 8或者以后的版本**。
