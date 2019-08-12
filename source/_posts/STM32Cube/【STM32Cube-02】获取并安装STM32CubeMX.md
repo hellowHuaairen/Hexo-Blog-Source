@@ -1,5 +1,5 @@
 ---
-title: 【STM32Cube-02】获取并安装STM32CubeMX
+title: 【STM32Cube_02】获取并安装STM32CubeMX
 date: 2019-07-23 10:48:56
 tags:
     STM32CubeMX
