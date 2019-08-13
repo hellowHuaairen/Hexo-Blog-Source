@@ -212,7 +212,12 @@ links_title: 友情链接
 links_layout: block
 #links_layout: inline
 links:
-  EmbeddedDevelop: https://www.strongerhuang.com
+  野火论坛: http://www.firebbs.cn/forum.php
+  安富莱论坛: http://www.armbbs.cn/forum.php
+  正点原子论坛: http://www.openedv.com
+  ST中文官网: https://www.st.com/content/st_com/zh.html
+  strongerhuang的个人博客: https://www.strongerhuang.com
+
 
 # Sidebar Avatar
 avatar:
