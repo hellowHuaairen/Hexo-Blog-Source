@@ -105,8 +105,7 @@
     {% include '_partials/pjax.swig' %}
   {%- endif %}
 
-  <！ - 页面点击小红心 - >
- < script type = “ text / javascript ” src = “ / js / love-click.js ” > </ script > 
+ < script type = "text / javascript" src = " / js / love-click.js " > </ script > 
 
 </body>
 </html>
