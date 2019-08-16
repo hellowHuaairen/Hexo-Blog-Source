@@ -6,6 +6,9 @@ tags:
 categories:
     Coremark移植
 ---
+本篇文章详细的讲述了如何移植Coremark跑分工具到STM32 系列 MCU 上。
+
+<!--more-->
  # 1. Coremark跑分工具
 
  Coremark是一个测试处理器性能的工具，一般只关心它最后给出的分数，所以江湖上称之为：“单片机跑分工具”。
