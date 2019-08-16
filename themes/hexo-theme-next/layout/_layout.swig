@@ -105,7 +105,8 @@
     {% include '_partials/pjax.swig' %}
   {%- endif %}
 
- <script type ="text/javascript" src = "/js/love-click.js" > </ script > 
-
+ <script type ="text/javascript" src = "/js/love-click.js" > </ script >
+ <script type="text/javascript" src="/js/FunnyTitle.js"></script>
 </body>
 </html>
+
