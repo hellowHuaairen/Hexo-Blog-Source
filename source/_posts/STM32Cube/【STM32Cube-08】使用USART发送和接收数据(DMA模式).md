@@ -7,7 +7,7 @@ categories:
     STM32CubeMX
 ---
 
-本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的USART，并使用**DMA模式**发送数据。
+本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的USART，并使用**DMA模式**发送数据和接收数据。
 <!--more-->
 # 1. 准备工作
 ## 硬件准备
@@ -81,8 +81,6 @@ STM32L4的最高主频到80M，所以配置PLL，最后使`HCLK = 80Mhz`即可�
 
 ![mark](http://mculover666.cn/image/20190806/1TQg7frjRpVr.png?imageslim)
 
-![mark](http://mculover666.cn/image/20190814/AITGSflAXS45.png?imageslim)
-
 ## 生成工程设置
 
 ![mark](http://mculover666.cn/image/20190816/RUWz76PbSunq.png?imageslim)
@@ -132,7 +130,61 @@ int main(void)
 
 ![mark](http://mculover666.cn/image/20190816/pNmCADptVjqr.png?imageslim)
 
-至此，我们已经学会了**如何配置USART使用DMA模式发送数据**，下一节将讨论实现printf()函数的多种方法。
+
+# 4. 使用DMA接收串口数据
+## 说明
+- 使用HAL库的时候不能同时使用DMA发送和接收数据，会出错。
+- 所有的步骤和发送时一样，这里我只给出需要修改的部分。
+
+## 修改串口DMA配置
+
+![mark](http://mculover666.cn/image/20190818/CqyMnF113eWT.png?imageslim)
+
+## 添加串口接收缓冲区
+```c
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+uint8_t dat[] = "Hello, I am Mculover666.\n";
+uint8_t recv_buf[13] = {0};		//串口接收缓冲区
+/* USER CODE END 0 */
+```
+## 修改main函数
+```c
+int main(void)
+{
+  HAL_Init();
+
+  SystemClock_Config();
+
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_USART1_UART_Init();
+
+  /* USER CODE BEGIN 2 */
+  HAL_UART_Transmit(&huart1, (uint8_t*)dat, sizeof(dat), 0xFFFF);
+  HAL_UART_Receive_DMA(&huart1, recv_buf, 13);  //使能DMA接收
+  /* USER CODE END 2 */
+
+  while (1)
+  {
+  }
+}
+```
+## 添加串口接收中断回调函数
+```c
+/* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) 
+{ 
+	//将接收到的数据再发送
+	HAL_UART_Transmit(&huart1,recv_buf,13, 0xFFFF);
+}
+/* USER CODE END 4 */
+```
+## 实验现象
+
+![mark](http://mculover666.cn/image/20190818/lgWCp78edRWz.png?imageslim)
+
+至此，我们已经学会了**如何配置USART使用DMA模式发送数据和接收数据**，下一节将讨论实现printf()函数的多种方法。
 
 **<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
 
