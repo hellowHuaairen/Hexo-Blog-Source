@@ -230,7 +230,7 @@ avatar:
   # In theme directory (source/images): /images/avatar.gif
   # In site directory (source/uploads): /uploads/avatar.gif
   # You can also use other linking images.
-  url: http://mculover666.cn/avatar.png
+  url: http://mculover666.cn/image/20190818/iKJu8Q8QBelF.png?imageslim
   # If true, the avatar would be dispalyed in circle.
   rounded: true
   # If true, the avatar would be rotated with the cursor.
