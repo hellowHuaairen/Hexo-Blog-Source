@@ -1,6 +1,5 @@
 ---
 title: Next主题中添加超级好玩的看板娘（CDN方式）
-date: 2019-08-18 10:48:56
 tags:
     Hexo Next
 categories:

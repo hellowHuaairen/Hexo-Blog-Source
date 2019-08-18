@@ -93,7 +93,7 @@ uint8_t recv_buf[13] = {0};
 ```
 ## 重新实现中断回调函数
 在NVIC一讲中我们探索了HAL库的中断处理机制，HAL中弱定义了一个中断回调函数 `HAL_UART_RxCpltCallback`， 我们需要在用户文件中重新定义该函数，放在哪都可以，这里我放在 `main.c` 中：
-```
+```c
 /* USER CODE BEGIN 4 */
 /* 中断回调函数 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
