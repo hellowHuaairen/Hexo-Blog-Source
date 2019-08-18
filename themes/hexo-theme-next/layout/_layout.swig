@@ -107,7 +107,7 @@
 
   <script type ="text/javascript" src = "/js/love-click.js" > </ script >
   <script type="text/javascript" src="/js/FunnyTitle.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/Mculover666/live2d-widget/autoload.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/Mculover666/live2d-widget@1.0.0/autoload.js"></script>
 </body>
 </html>
 

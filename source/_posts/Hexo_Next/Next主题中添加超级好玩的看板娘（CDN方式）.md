@@ -83,3 +83,24 @@ git add -A
 git commit -m "modify position to right"
 git push origin master
 ```
+### 发布新版本
+我们是使用了Github免费的CDN服务，所以还需要发布一个新的版本：
+
+![mark](http://mculover666.cn/image/20190818/Op2QmULLAWJ6.png?imageslim)
+
+![mark](http://mculover666.cn/image/20190818/SsnBefsig3Pa.png?imageslim)
+
+![mark](http://mculover666.cn/image/20190818/kvMsAcV9wc90.png?imageslim)
+
+### 修改CDN链接
+Github上CDN的使用方式为：
+```bash
+https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/文件路径
+```
+所以在博客中的`/themes/hexo-theme-next/layout/_layout.swing`文件中修改CDN链接使用最新的版本：
+```xml
+<script src="https://cdn.jsdelivr.net/gh/Mculover666/live2d-widget@1.0.0/autoload.js"></script>
+```
+
+### 重新生成部署博客
+
