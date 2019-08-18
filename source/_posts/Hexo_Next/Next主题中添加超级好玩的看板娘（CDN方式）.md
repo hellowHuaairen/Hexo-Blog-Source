@@ -103,4 +103,15 @@ https://cdn.jsdelivr.net/gh/你的用户名/你的仓库名@发布的版本号/�
 ```
 
 ### 重新生成部署博客
+```bash
+hexo clean
+hexo g
+hexo d
+```
+来看看效果哈哈哈，看板娘已经成功的跑到了右边：
 
+![mark](http://mculover666.cn/image/20190818/tYQyMphBy51z.png?imageslim)
+
+**<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
+
+![mark](http://mculover666.cn/image/20190811/gKNrs8CqezFQ.jpg?imageslim)
