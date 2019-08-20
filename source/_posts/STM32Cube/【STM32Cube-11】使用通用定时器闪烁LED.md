@@ -14,8 +14,12 @@ categories:
 ## 硬件准备
 - 开发板
 首先需要准备一个开发板，这里我准备的是STM32L4的开发板（BearPi）：
+
 ![mark](http://mculover666.cn/image/20190806/9uiPTi5odYSj.png?imageslim)
+
 - 测试LED
+
+
 这里我直接使用板载LED，原理图如下：
 ![mark](http://mculover666.cn/image/20190807/mvxaRos96773.png?imageslim)
 

@@ -1,6 +1,6 @@
 ---
-title: 【STM32Cube】（十三）使用通用定时器产生PWM驱动蜂鸣器
-date: 2019-08-07 15:04:56
+title: 【STM32Cube_12】使用通用定时器产生PWM驱动蜂鸣器
+date: 2019-08-02 15:04:56
 tags:
     STM32CubeMX
 categories:
@@ -16,7 +16,9 @@ categories:
 首先需要准备一个开发板，这里我准备的是STM32L4的开发板（BearPi）：
 
 ![mark](http://mculover666.cn/image/20190806/9uiPTi5odYSj.png?imageslim)
-- 测试LED
+
+- 蜂鸣器
+
 这里我直接使用扩展板上的蜂鸣器，如图：
 
 ![mark](http://mculover666.cn/image/20190807/egsTj4DhhwM8.png?imageslim)
@@ -27,6 +29,10 @@ categories:
 
 ## 软件准备
 - 需要安装好Keil - MDK及芯片对应的包，以便编译和下载生成的代码；
+
+>Keil MDK和串口助手Serial Port Utility 的安装包都可以**在文末关注公众号获取**，回复关键字获取相应的安装包：
+
+![mark](http://mculover666.cn/image/20190814/gubaOwmETp1w.png?imageslim)
 
 # 2.生成MDK工程
 ## 选择芯片型号
@@ -45,6 +51,9 @@ categories:
 
 ## 配置通用定时器TIM16
 ### STM32L431的定时器介绍
+
+> 知识小卡片
+
 STM32L431xx 系列有 1 个高级定时器（TIM1）, 3 个通用定时器（TIM2、TIM15、TIM16），两个基本定时器（TIM6、TIM7），还有两个低功耗定时器（LPTIM1、LPTIM2）。
 
 STM32L475 的通用 TIMx (TIM2、TIM15、TIM16)定时器功能包括：
@@ -68,6 +77,7 @@ TIM15、TIM16 只支持向上（递增）计数方式；
   * 输入捕获
   * 输出比较
 
+> 知识小卡片结束啦
 ### 配置定时器TIM16
 首先选择`TIM`，选择通道1的功能，默认的CH1是`PA6`引脚，但是开发板上是与 PB8 连接的，所以在右边将PB8配置为`TIM16_CH1`：
 ![mark](http://mculover666.cn/image/20190807/3Ru6wXY95H7s.png?imageslim)
@@ -110,3 +120,8 @@ while (1)
 ## 测试结果
 编译下载后即可听到无源蜂鸣器开始工作。
 
+至此，我们已经学会**如何使用通用定时器产生PWM驱动蜂鸣器**，下一节将讲述如何
+
+**<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
+
+![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)
