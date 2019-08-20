@@ -1,6 +1,6 @@
 ---
-title: 【STM32Cube】（十二）使用通用定时器闪烁LED
-date: 2019-08-07 10:48:56
+title: 【STM32Cube_11】使用通用定时器闪烁LED
+date: 2019-08-01 10:48:56
 tags:
     STM32CubeMX
 categories:
@@ -22,6 +22,10 @@ categories:
 ## 软件准备
 - 需要安装好Keil - MDK及芯片对应的包，以便编译和下载生成的代码；
 
+>Keil MDK和串口助手Serial Port Utility 的安装包都可以**在文末关注公众号获取**，回复关键字获取相应的安装包：
+
+![mark](http://mculover666.cn/image/20190814/gubaOwmETp1w.png?imageslim)
+
 # 2.生成MDK工程
 ## 选择芯片型号
 打开STM32CubeMX，打开MCU选择器：
@@ -38,10 +42,17 @@ categories:
 ![mark](http://mculover666.cn/image/20190806/k593lGGb5tlW.png?imageslim)
 
 ## 配置LED的GPIO引脚
-可以参考我的这篇文章：[]()。
+查看小熊派开发板的原理图，如下：
+
+![mark](http://mculover666.cn/image/20190812/5iCtQUfKbgzA.png?imageslim)
+
+所以接下来我们选择配置`PC13`引脚：
+
+![mark](http://mculover666.cn/image/20190812/Ad3UrGCsgjXr.png?imageslim)
 
 ## 配置通用定时器TIM2
-### STM32L431的定时器介绍
+>知识小卡片——STM32L431的定时器
+
 STM32L431xx 系列有 1 个高级定时器（TIM1）, 3 个通用定时器（TIM2、TIM15、TIM16），两个基本定时器（TIM6、TIM7），还有两个低功耗定时器（LPTIM1、LPTIM2）。
 
 STM32L475 的通用 TIMx (TIM2、TIM15、TIM16)定时器功能包括：
@@ -64,6 +75,8 @@ TIM15、TIM16 只支持向上（递增）计数方式；
   * 触发事件(计数器启动、停止、初始化或者由内部/外部触发计数)
   * 输入捕获
   * 输出比较
+
+>知识小卡片结束啦~
 
 ### 配置定时器TIM2
 首先选择`TIM2`，时钟源选择内部时钟：
@@ -112,3 +125,8 @@ HAL_TIM_Base_Start_IT(&htim2);
 ### 测试结果
 编译下载后即可看到LED以 2 Hz的频率闪烁。
 
+至此，我们已经学会**如何使用通用定时器闪烁LED**，下一节将讲述如何使用通用定时器产生PWM驱动蜂鸣器。
+
+**<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
+
+![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)

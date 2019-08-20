@@ -23,7 +23,7 @@ categories:
 >Keil MDK和串口助手Serial Port Utility 的安装包都可以**在文末关注公众号获取**，回复关键字获取相应的安装包：
 
 ![mark](http://mculover666.cn/image/20190814/gubaOwmETp1w.png?imageslim)
- 
+
 # 2.生成MDK工程
 ## 选择芯片型号
 打开STM32CubeMX，打开MCU选择器：

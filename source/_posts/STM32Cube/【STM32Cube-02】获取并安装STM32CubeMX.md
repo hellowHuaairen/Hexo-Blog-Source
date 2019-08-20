@@ -10,11 +10,9 @@ categories:
 本篇文章主要介绍如何获取并安装STM32CubeMX。
 <!--more-->
 
-本文中涉及到的安装包可以在官网下载到，速度比较慢，为了方便大家，我已上传到百度网盘，资源列表如下：
+本文中涉及到的安装包可以在官网下载到，速度比较慢，为了方便大家，我已上传到百度网盘，为了确保资源的更新，我没有直接放上链接，可以在**文末**关注我的微信公众号，回复“**STM32CubeMX**”获取，敬请原谅~
 
-![mark](http://mculover666.cn/image/20190811/cl1vFBW5yuSq.png?imageslim)
-
-为了确保资源的更新，我没有直接放上链接，可以在**文末**关注我的微信公众号，回复“**STM32CubeMX**”获取，敬请原谅~
+![mark](http://mculover666.cn/image/20190814/gubaOwmETp1w.png?imageslim)
 
 # 1.安装Java环境（JRE）
 因为STM32CubeMX是采用Java语言编写的，所以需要**先在电脑上安装Java运行环境**（JRE，Java runtime Environment），安装JRE时建议**选择Java 8或者以后的版本**。
@@ -123,4 +121,4 @@ STM32Cube MCU Packages的安装方式有两种：
 
 **<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
 
-![mark](http://mculover666.cn/image/20190811/gKNrs8CqezFQ.jpg?imageslim)
+![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)

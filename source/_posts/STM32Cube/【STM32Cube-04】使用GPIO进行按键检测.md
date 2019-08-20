@@ -19,6 +19,10 @@ categories:
 ## 软件准备
 - 需要安装好Keil - MDK及芯片对应的包，以便编译和下载生成的代码；
 
+>Keil MDK和串口助手Serial Port Utility 的安装包都可以**在文末关注公众号获取**，回复关键字获取相应的安装包：
+
+![mark](http://mculover666.cn/image/20190814/gubaOwmETp1w.png?imageslim)
+
 # 2.生成MDK工程
 ## 选择芯片型号
 打开STM32CubeMX，打开MCU选择器：
@@ -139,4 +143,4 @@ int main(void)
 
 **<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
 
-![mark](http://mculover666.cn/image/20190811/gKNrs8CqezFQ.jpg?imageslim)
+![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)

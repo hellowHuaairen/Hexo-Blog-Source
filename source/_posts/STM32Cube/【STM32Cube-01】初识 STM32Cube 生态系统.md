@@ -103,4 +103,4 @@ STM32Cube提供初步写好的用户代码，开发者可以在此基础上开�
 
 **<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
 
-![mark](http://mculover666.cn/image/20190811/gKNrs8CqezFQ.jpg?imageslim)
+![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)

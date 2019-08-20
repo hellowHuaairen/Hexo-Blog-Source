@@ -1,6 +1,6 @@
 ---
-title: 【STM32Cube】（十一）使用ADC读取气体传感器数据（MQ-2）
-date: 2019-08-06 16:48:56
+title: 【STM32Cube_10】使用ADC读取气体传感器数据（MQ-2）
+date: 2019-07-31 16:48:56
 tags:
     STM32CubeMX
     气体传感器MQ-2
@@ -27,6 +27,10 @@ MQ-2的原理图如下：
 - 需要安装好Keil - MDK及芯片对应的包，以便编译和下载生成的代码；
 - 准备一个串口调试助手，这里我使用的是`Serial Port Utility`；
 
+>Keil MDK和串口助手Serial Port Utility 的安装包都可以**在文末关注公众号获取**，回复关键字获取相应的安装包：
+
+![mark](http://mculover666.cn/image/20190814/gubaOwmETp1w.png?imageslim)
+
 # 2.生成MDK工程
 ## 选择芯片型号
 打开STM32CubeMX，打开MCU选择器：
@@ -43,16 +47,29 @@ MQ-2的原理图如下：
 ![mark](http://mculover666.cn/image/20190806/k593lGGb5tlW.png?imageslim)
 
 ## 配置串口
-配置串口章节参考我的上一篇文章：[]()。
+小熊派开发板板载ST-Link并且虚拟了一个串口，原理图如下：
+
+![mark](http://mculover666.cn/image/20190814/IwyXONVefPx9.png?imageslim)
+
+这里我将开关拨到`AT-MCU`模式，使PC的串口与USART1之间连接。
+
+接下来开始配置`USART1`：
+
+![mark](http://mculover666.cn/image/20190814/nLMRMYtmzghl.png?imageslim)
+
 
 ## 配置ADC
-### STM32L431的ADC介绍
+
+>知识小卡片 —— ADC
+
 STM32L431xx 系列有 1 个 ADC，ADC 分辨率高达 12 位，每个 ADC 具有多达 20 个的采集
 通道，这些通道的 A/D 转换可以单次、连续、扫描或间断模式执行。 ADC 的结果可以左对齐
 或右对齐方式存储在 16 位数据寄存器中。
 
 STM32L431 的 ADC 最大的转换速率为 5.33Mhz，也就是转换时间为 0.188us（12 位分辨率
-时）。 ADC 的转换时间与 AHB 总线时钟频率无关。
+时），ADC 的转换时间与 AHB 总线时钟频率无关。
+
+>知识小卡片结束啦~对ADC有没有了解呢？
 
 ### 确定ADC通道
 查看小熊派E53接口的原理图：
@@ -121,4 +138,10 @@ int main(void)
 }
 ```
 ![mark](http://mculover666.cn/image/20190806/6jtuYrH0Mdot.png?imageslim)
+
+至此，我们已经学会**如何使用ADC读取MQ-2传感器的值**，下一节将讲述如何使用通用定时器闪烁LED。
+
+**<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
+
+![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)
 
