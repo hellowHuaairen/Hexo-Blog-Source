@@ -19,7 +19,6 @@ categories:
 
 - 测试LED
 
-
 这里我直接使用板载LED，原理图如下：
 ![mark](http://mculover666.cn/image/20190807/mvxaRos96773.png?imageslim)
 
@@ -59,7 +58,7 @@ categories:
 
 STM32L431xx 系列有 1 个高级定时器（TIM1）, 3 个通用定时器（TIM2、TIM15、TIM16），两个基本定时器（TIM6、TIM7），还有两个低功耗定时器（LPTIM1、LPTIM2）。
 
-STM32L475 的通用 TIMx (TIM2、TIM15、TIM16)定时器功能包括：
+STM32L431 的通用 TIMx (TIM2、TIM15、TIM16)定时器功能包括：
 
 - 16 位(TIM15,TIM16)/32 位(TIM2)向上、向下、向上/向下自动装载计数器，注意：
 TIM15、TIM16 只支持向上（递增）计数方式；
@@ -70,7 +69,7 @@ TIM15、TIM16 只支持向上（递增）计数方式；
 
   * 输入捕获
   * 输出比较
-  * PWM 生成(边缘或中间对齐模式) ，注意： TIM12~TIM17 不支持中间对齐模式
+  * PWM 生成(边缘或中间对齐模式)
   * 单脉冲模式输出
 
 - 可使用外部信号控制定时器和定时器互连的同步电路。
@@ -110,6 +109,7 @@ STM32L4的最高主频到80M，所以配置PLL，最后使`HCLK = 80Mhz`即可�
 # 3. 在MDK中编写、编译、下载用户代码
 ## 编写中断回调函数
 在`stm32l4xx_it.c`中生成的中断处理函数如下，定时器TIM2所有的中断都会调用该中断服务函数`TIM2_IRQHandler`：
+
 ![mark](http://mculover666.cn/image/20190807/j4GAcl4onlAR.png?imageslim)
 
 在中断处理函数中自动生成了`HAL_TIM_IRQHandler(&htim2)`代码，该代码会自动根据中断事件回调相应的函数，这里我们需要处理**更新中断的事件**，回调函数默认是`__weak`定义的，所以在`tim.c`中重新定义该回调函数，并且在该函数中添加功能的时候，因为该回调函数会被所有的定时器共用，所以需要先判断是哪个定时器在调用：
@@ -120,13 +120,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* tim_baseHandle)
 		HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 }
 ```
-### 启动定时器并使能中断
+## 启动定时器并使能中断
 最后在`main`函数中开启TIM2并使能其中断（TIM2初始化代码之后，while之前）：
 ```c
 HAL_TIM_Base_Start_IT(&htim2);
 ```
 
-### 测试结果
+## 测试结果
 编译下载后即可看到LED以 2 Hz的频率闪烁。
 
 至此，我们已经学会**如何使用通用定时器闪烁LED**，下一节将讲述如何使用通用定时器产生PWM驱动蜂鸣器。

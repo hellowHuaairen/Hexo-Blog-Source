@@ -7,7 +7,9 @@ tags:
 categories:
     RT-Thread
 ---
+本篇文章详细的讲述了如何制作小熊派开发板（STM32L431RCT6）的RT-Thread BSP。
 
+<!--more-->
 # 0 准备和说明
 
 
