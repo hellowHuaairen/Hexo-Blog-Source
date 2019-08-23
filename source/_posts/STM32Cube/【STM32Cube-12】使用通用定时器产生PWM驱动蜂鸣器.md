@@ -50,7 +50,6 @@ categories:
 ![mark](http://mculover666.cn/image/20190806/k593lGGb5tlW.png?imageslim)
 
 ## 配置通用定时器TIM16
-### STM32L431的定时器介绍
 
 >知识小卡片——STM32L431的定时器
 
@@ -77,7 +76,9 @@ TIM15、TIM16 只支持向上（递增）计数方式；
   - 输出比较
 
 >知识小卡片结束啦~
-### 配置定时器TIM16
+
+接下来开始配置TIM16定时器的PWM功能：
+
 首先选择`TIM`，选择通道1的功能，默认的CH1是`PA6`引脚，但是开发板上是与 PB8 连接的，所以在右边将PB8配置为`TIM16_CH1`：
 ![mark](http://mculover666.cn/image/20190807/3Ru6wXY95H7s.png?imageslim)
 
