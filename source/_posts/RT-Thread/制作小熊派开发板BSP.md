@@ -10,10 +10,26 @@ categories:
 本篇文章详细的讲述了如何制作小熊派开发板（STM32L431RCT6）的RT-Thread BSP。
 
 <!--more-->
-# 0 准备和说明
+# 0. 准备和说明
+## 硬件准备
+- 小熊派开发板一个
+
+![BearPi-Board](http://mculover666.cn/image/20190822/f02AzcFHINml.png?imageslim)
+
+## 软件准备
+- Keil MDK
+- STM32CubeMX
+- 串口终端（Putty/XShell/MobaXterm）
+
+## RT-Thread相关准备
+- Git工具
+- RT-Thread代码
+- RT-Thread ENV 工具
+
+RT-Thread相关资源都可以在[RT-Thread官方下载链接](https://www.rt-thread.org/page/download.html)下载到。
 
 
-# 1 复制L4通用模板
+# 1. 复制L4通用模板
 制作新 BSP 的第一步是复制一份同系列的 BSP 模板作为基础，通过对 BSP 模板的修改来获得新 BSP。
 
 目前提供的 BSP 模板系列如下表所示：
