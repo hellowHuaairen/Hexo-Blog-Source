@@ -179,7 +179,7 @@ RT-Thread相关资源都可以在[RT-Thread官方下载链接](https://www.rt-th
 
 ![配置下载方式](http://mculover666.cn/image/20190820/t4hQx7SfaWKd.png?imageslim)
 
-# 5 重新生成工程
+# 5 重新生成工程 
 
 重新生成工程需要使用 env 工具。
 
