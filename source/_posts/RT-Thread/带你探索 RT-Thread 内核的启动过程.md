@@ -1,3 +1,13 @@
+---
+title: 带你探索 RT-Thread 内核的启动过程
+date: 2019-08-20 11:06:52
+tags:
+    RT-Thread
+categories:
+    RT-Thread
+---
+
+本文手把手带你探索RT-Thread内核是如何启动的~
 
 <!--more-->
 # 1.准备工作

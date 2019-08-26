@@ -1,3 +1,13 @@
+---
+title: 在Github上同步更新Fork的项目
+date: 2019-01-10 11:06:52
+tags:
+    Git
+    Github
+categories:
+    Git&Github
+---
+
 # 1.背景介绍
 最近在 Github 上 Fork 了 RT-Thread 项目，然后 clone 到本地进行修改，并准备修改提交，但是发现了一个新的问题：
 
