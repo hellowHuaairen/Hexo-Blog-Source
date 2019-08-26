@@ -1,6 +1,6 @@
 ---
 title: 带你探索 RT-Thread 内核的启动过程
-date: 2019-08-20 11:06:52
+date: 2019-08-21 11:06:52
 tags:
     RT-Thread
 categories:
@@ -84,6 +84,62 @@ int $Sub$$main(void)
 }
 ```
 `$Sub$$main` 函数是 MDK 中的一个扩展功能，在调用 main 函数之前先调用`$Sub$$main` 完成系统启动，然后调用给用户的 main 函数。
+
+该函数中调用 RT-Thread 统一的入口函数 ` rtthread_startup()` 来启动内核，接下来再次按下 `F11`，来探索该入口函数~
+
+## RT-Thread启动函数
+
+进入该函数，可以看到RT-Thread启动的所有流程：
+
+```c
+int rtthread_startup(void)
+{
+    /* 关闭所有中断 */
+    rt_hw_interrupt_disable();
+
+    /* 板级硬件初始化 */
+    rt_hw_board_init();
+
+    /* 打印 RT-Thread 版本号 */
+    rt_show_version();
+
+    /* 定时系统初始化 */
+    rt_system_timer_init();
+
+    /* 调度系统初始化 */
+    rt_system_scheduler_init();
+
+#ifdef RT_USING_SIGNALS
+    /* 信号系统初始化 */
+    rt_system_signal_init();
+#endif
+
+    /* 创建应用初始化线程（main线程，调用main函数） */
+    rt_application_init();
+
+    /* 创建定时器初始化线程 */
+    rt_system_timer_thread_init();
+
+    /* 空闲线程初始化 */
+    rt_thread_idle_init();
+
+#ifdef RT_USING_SMP
+    rt_hw_spin_lock(&_cpus_lock);
+#endif /*RT_USING_SMP*/
+
+    /* 启动调度器，系统开始调度，不再返回 */
+    rt_system_scheduler_start();
+
+    /* 永远执行不到这儿 */
+    return 0;
+}
+```
+
+至此，RT-Thread内核开始多任务调度，启动成功，大致的启动流程总结如下：
+
+![mark](http://mculover666.cn/image/20190826/1CFCe4hFyanM.png?imageslim)
+
+
 
 
 
