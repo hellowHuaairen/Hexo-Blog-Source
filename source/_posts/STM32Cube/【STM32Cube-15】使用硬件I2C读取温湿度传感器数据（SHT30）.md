@@ -1,5 +1,5 @@
 ---
-title: 【STM32Cube】（十四）使用硬件I2C读取温湿度传感器数据（SHT30）
+title: 【STM32Cube_15】使用硬件I2C读取温湿度传感器数据（SHT30）
 date: 2019-08-05 08:48:56
 tags:
     STM32CubeMX
