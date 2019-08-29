@@ -63,10 +63,10 @@ categories:
 
 ![mark](http://mculover666.cn/image/20190829/tViOphp1rG1w.png?imageslim)
 
-# 2. 添加通用定时器TIM15/16
+# 2. 添加通用定时器TIM15
 
-按照上面的步骤，添加TIM15/16，具体的过程不再赘述，结果如下：
+按照上面的步骤，添加TIM15，具体的过程不再赘述，结果如下：
 
-![mark](http://mculover666.cn/image/20190829/Edavtb33Y8Ia.png?imageslim)]
+![mark](http://mculover666.cn/image/20190829/6bPnqtru1t94.png?imageslim)
 
-![mark](http://mculover666.cn/image/20190829/paubJhd2VqDQ.png?imageslim)
+![mark](http://mculover666.cn/image/20190829/nJtLYN6k4L9f.png?imageslim)
