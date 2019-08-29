@@ -9,7 +9,7 @@ categories:
 
 本篇文章通俗的讲解了何谓CRC？如何生成CRC码以及如何使用CRC码校验，最后采用**多种思路**用C语言实现CRC校验。
 
-![mark](http://mculover666.cn/image/20190829/wBIiCV3b5rNB.png?imageslim)
+![mark](http://mculover666.cn/image/20190829/a5uVezmqAgdw.png?imageslim)
 
 <!--more-->
 

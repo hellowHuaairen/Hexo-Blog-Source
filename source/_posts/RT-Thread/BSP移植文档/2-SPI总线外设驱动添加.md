@@ -1,3 +1,15 @@
+---
+title: SPI总线外设驱动添加
+date: 2019-08-11 18:48:56
+tags:
+    STM32CubeMX
+    RT-Thread
+categories:
+    RT-Thread
+---
+
+<!--more-->
+
 # 1. 添加SPI
 ## 1.1. 打开 STM32CubeMX 工程
 
