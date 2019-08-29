@@ -1,10 +1,11 @@
 ---
-title: 【STM32Cube_15】使用硬件CRC校验数据
-date: 2019-08-11 10:48:56
+title: 【STM32Cube_16】使用硬件CRC校验数据
+date: 2019-08-06 09:48:56
 tags:
     STM32CubeMX
     温湿度传感器
     SHT30
+    CRC校验
 categories:
     STM32CubeMX
 ---
@@ -23,6 +24,10 @@ categories:
 - 需要安装好Keil - MDK及芯片对应的包，以便编译和下载生成的代码；
 - 准备一个串口调试助手，这里我使用的是`Serial Port Utility`；
 
+>Keil MDK和串口助手Serial Port Utility 的安装包都可以**在文末关注公众号获取**，回复关键字获取相应的安装包：
+
+![mark](http://mculover666.cn/image/20190814/gubaOwmETp1w.png?imageslim)
+
 # 2.生成MDK工程
 ## 选择芯片型号
 打开STM32CubeMX，打开MCU选择器：
@@ -39,7 +44,15 @@ categories:
 ![mark](http://mculover666.cn/image/20190806/k593lGGb5tlW.png?imageslim)
 
 ## 配置串口
-配置串口章节参考我的上一篇文章：[]()。
+小熊派开发板板载ST-Link并且虚拟了一个串口，原理图如下：
+
+![mark](http://mculover666.cn/image/20190814/IwyXONVefPx9.png?imageslim)
+
+这里我将开关拨到`AT-MCU`模式，使PC的串口与USART1之间连接。
+
+接下来开始配置`USART1`：
+
+![mark](http://mculover666.cn/image/20190814/nLMRMYtmzghl.png?imageslim)
 
 ## 配置CRC外设
 首先激活CRC：
@@ -47,7 +60,7 @@ categories:
 
 然后配置CRC校验的初始值：
 
-这里我们以SHT30为例，其数手册中已给出，如图：
+这里我们以SHT30为例，其数据手册中已给出，如图：
 
 ![mark](http://mculover666.cn/image/20190809/wtLIFxbSLyon.png?imageslim)
 
@@ -57,8 +70,6 @@ categories:
 ## 配置时钟树
 STM32L4的最高主频到80M，所以配置PLL，最后使`HCLK = 80Mhz`即可：
 ![mark](http://mculover666.cn/image/20190806/1TQg7frjRpVr.png?imageslim)
-
-![mark](http://mculover666.cn/image/20190808/EVKCwrQNEWcl.png?imageslim)
 
 ## 生成工程设置
 ![mark](http://mculover666.cn/image/20190811/8pAljFetp84X.png?imageslim)
@@ -73,7 +84,9 @@ STM32L4的最高主频到80M，所以配置PLL，最后使`HCLK = 80Mhz`即可�
 
 # 3. 在MDK中编写、编译、下载用户代码
 ## 重定向printf( )函数
-参考：[【STM32Cube】（八）基于串口发送函数实现printf()](https://blog.csdn.net/Mculover666/article/details/95975461)。
+
+参考：[【STM32Cube_09】重定向printf函数到串口输出的多种方法](https://www.mculover666.cn/2019/07/30/STM32Cube/【STM32Cube-09】重定向printf函数到串口输出的多种方法/)。
+
 
 ## 测试CRC校验
 在`main.c`文件中添加如下代码:
@@ -114,3 +127,9 @@ int main(void)
 测试结果如下：
 
 ![mark](http://mculover666.cn/image/20190811/cmbdUIcWEkcQ.png?imageslim)
+
+至此，我们已经学会**如何使用硬件CRC校验SHT30的数据**，下一节将讲述如何使用硬件SPI驱动LCD屏幕（ST7789）。
+
+**<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
+
+![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)
