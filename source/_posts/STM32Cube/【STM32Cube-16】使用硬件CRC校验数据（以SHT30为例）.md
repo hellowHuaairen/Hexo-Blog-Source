@@ -1,5 +1,5 @@
 ---
-title: 【STM32Cube_16】使用硬件CRC校验数据
+title: 【STM32Cube_16】使用硬件CRC校验数据（以SHT30为例）
 date: 2019-08-06 09:48:56
 tags:
     STM32CubeMX
