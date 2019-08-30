@@ -11,6 +11,17 @@ categories:
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件SPI外设与ST7789通信，驱动16bit TFT-LCD 屏幕。
 <!--more-->
 
+# 0. 前言
+我的一些个人观点：
+
+>学习 SPI 外设驱动LCD屏幕没有必要手写驱动，学习这部分代码的目的是为了了解TFT-LCD的工作原理，每个像素点是如何显示的，**不要花过多的精力在弄明白每个命令的意思**，建议基于本驱动，学习一下打点，画线算法，画圆算法，画多边形算法等等，还可以学习显示英文字符，中文字符，最后还可以移植STemwin显示界面等等好玩的东西~
+
+![mark](http://mculover666.cn/image/20190830/uNWWafiL7nsd.png?imageslim)
+
+![mark](http://mculover666.cn/image/20190830/AE6zUCi3kdTR.png?imageslim)
+
+![mark](http://mculover666.cn/image/20190830/H63SNPAj4yeq.png?imageslim)
+
 # 1. 准备工作
 ## 硬件准备
 - 开发板
@@ -444,6 +455,7 @@ void LCD_Init(void)
 ![mark](http://mculover666.cn/image/20190829/2rf6XcYSMCAE.png?imageslim)
 
 绿绿的，是不是很好看哈哈(斜眼笑.jpg)~
+
 
 至此，我们已经学会**如何使用硬件SPI驱动LCD屏幕（ST7789）**，下一节将讲述如何使用硬件QSPI接口读写SPI Flash的数据。
 
