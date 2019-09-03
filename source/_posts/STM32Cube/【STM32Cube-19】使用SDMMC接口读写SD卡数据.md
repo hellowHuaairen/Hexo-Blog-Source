@@ -9,6 +9,10 @@ categories:
     STM32CubeMX
 ---
 
+本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件SDMMC外设读取SD卡数据。
+
+<!--more-->
+
 # 1. 准备工作
 ## 硬件准备
 - 开发板
