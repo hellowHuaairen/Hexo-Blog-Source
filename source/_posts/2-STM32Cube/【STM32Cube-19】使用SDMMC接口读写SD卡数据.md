@@ -11,6 +11,8 @@ categories:
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件SDMMC外设读取SD卡数据。
 
+![mark](http://mculover666.cn/image/20190905/vyYEcOIniSlS.jpg?imageslim)
+
 <!--more-->
 
 # 1. 准备工作
@@ -259,8 +261,4 @@ if(sdcard_status == 0)
 **<font color="#FF0000">更多精彩文章及资源，请关注我的微信公众号：『mculover666』。</font>**
 
 ![mark](http://mculover666.cn/image/20190814/NQqt1eRxrl1K.png?imageslim)
-
-
-
-
 

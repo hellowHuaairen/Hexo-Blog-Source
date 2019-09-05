@@ -1,5 +1,5 @@
 ---
-title: RT-THread 通用GPIO设备管理框架使用文档
+title: RT-Thread 通用GPIO设备管理框架使用文档
 date: 2019-08-30 09:48:56
 tags:
     RT-Thread
