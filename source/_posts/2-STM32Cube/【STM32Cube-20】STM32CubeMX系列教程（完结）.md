@@ -9,7 +9,7 @@ categories:
 
 秒变 STM32 大神，STM32CubeMX你值得拥有！
 
-![mark](http://mculover666.cn/image/20190906/addIqqzPl1N8.jpg?imageslim)
+![mark](http://mculover666.cn/image/20190906/ieVVbmjhuNm8.jpg?imageslim)
 
 <!--more-->
 
