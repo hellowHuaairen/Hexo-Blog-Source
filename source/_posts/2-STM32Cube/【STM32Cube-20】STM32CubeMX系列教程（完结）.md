@@ -5,6 +5,8 @@ tags:
     STM32CubeMX
 categories:
     STM32CubeMX
+top:
+    true
 ---
 
 秒变 STM32 大神，STM32CubeMX你值得拥有！

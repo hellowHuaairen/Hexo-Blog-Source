@@ -9,6 +9,8 @@ install:
   - npm --version
   - npm install hexo-cli -g
   - npm install
+  - npm uninstall hexo-generator-index --save
+  - npm install hexo-generator-index-pin-top --save
 
 build_script:
   - hexo clean
