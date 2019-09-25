@@ -16,18 +16,18 @@ menu:
   About:
     url: /about
     icon: fas fa-user-circle
-  #Contact:
-    #url: /contact
-    #icon: fas fa-comments
-  Friends:
-    url: /friends
-    icon: fas fa-address-book
+  Contact:
+    url: /contact
+    icon: fas fa-comments
+  #Friends:
+    #url: /friends
+    #icon: fas fa-address-book
 
 # Website start time.
 # 站点运行开始时间.
 time:
-  year: 2019 # 年份
-  month: 06 # 月份
+  year: 2016 # 年份
+  month: 08 # 月份
   date: 28 # 日期
   hour: 00 # 小时
   minute: 00 # 分钟
@@ -47,16 +47,16 @@ cover:
 dream:
   enable: true
   showTitle: true
-  title: 我的梦想
-  text: 不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+  title: 人生哲理
+  text: 物来顺应，未来不迎，当时不杂，过往不恋。 -- 曾国藩
 
 # Whether to display the musics.
 # 是否在首页显示音乐.
 music:
-  enable: false
+  enable: true
   showTitle: true
   title: 听听音乐
-  fixed: false # 开启吸底模式
+  fixed: true # 开启吸底模式
   autoplay: false # 是否自动播放
   theme: '#42b983'
   loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
@@ -99,19 +99,19 @@ indexbtn:
   enable: true
   name: Github
   icon: fab fa-github-alt
-  url: https://github.com/blinkfox/hexo-theme-matery
+  url: https://github.com/Mculover666
 
 # The configurations of the second line of home banner
 # icon/button will not show up if you leave the corresponding socialLink empty
 # 首页 banner 中的第二行个人信息配置，留空即不启用
 socialLink:
-  github: 
-  email: 
+  github: https://github.com/Mculover666
+  email: mculover666@foxmail.com
   facebook: 
   twitter: 
-  qq: 
+  qq: 2412828003
   weibo: 
-  zhihu: 
+  zhihu: https://www.zhihu.com/people/wang-shi-wei-67-38/activities
   rss: true
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
@@ -273,22 +273,22 @@ livere:
 # To use it, activate the configuration item and set appId and appKey.
 # Valine 评论模块的配置，默认为不激活，如要使用，就请激活该配置项，并设置 appId 和 appKey.
 valine:
-  enable: false
-  appId:
-  appKey:
+  enable: true
+  appId: p30jOBeOU51H3xzGNy4U0Nq8-gzGzoHsz
+  appKey: b2RPUwnbQaB8l0S7zTKoKwDj
   notify: false
   verify: false
   visitor: true
   avatar: 'mm' # Gravatar style : mm/identicon/monsterid/wavatar/retro/hide
   pageSize: 10
-  placeholder: 'just go go' # Comment Box placeholder
+  placeholder: ‘(*╹▽╹*)想说点什么呢~’ # Comment Box placeholder
   background: /medias/comment_bg.png
 
 # Whether to display fork me on github icon and link, default true, You can change it to your repo address
 # 配置是否在 header 中显示 fork me on github 的图标，默认为true，你可以修改为你的仓库地址.
 githubLink:
   enable: true
-  url: https://github.com/blinkfox/hexo-theme-matery
+  url: https://github.com/Mculover666
   title: Fork Me
 
 # The password verification feature of read post. To use this feature,
@@ -317,9 +317,9 @@ googleAnalytics:
 
 # Add baidu analytics configuration
 # 添加 baidu Analytics 配置
-baiduAnalytics:
-  enable: false
-  id: 
+baiduAnalytics: 
+  enable: true
+  id: 6e1efa0988723a1db6356535db2ae6bd
   
 # 百度搜索资源平台提交链接
 baiduPush: true
@@ -480,6 +480,6 @@ banner: true
 
 #ICP备案信息尾部显示
 icp:
-  enable: false
-  url: # 备案链接
-  text: # 备案信息
+  enable: true
+  url: http://www.miitbeian.gov.cn # 备案链接
+  text: 陇ICP备19002222号 # 备案信息
