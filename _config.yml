@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Mculover666的博客
-subtitle: 专注于嵌入式领域开发
-description:  专注于嵌入式领域开发
+title: Mculover666
+subtitle: 嵌入式软件开发
+description:  一个喜欢玩板子的小码农
 keywords: 嵌入式软件 C/C++ ARM Linux 物联网IoT
 author: Mculover666
 language: zh-CN
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://mculover666.cn
+url: http://www.mculover666.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -39,10 +39,13 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace:
+  enable: false
+
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'atom-dark'
+  line_number: true    # default false
+  custom_css:
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')

@@ -9,6 +9,7 @@ install:
   - npm --version
   - npm install hexo-cli -g
   - npm install
+  - npm i -S hexo-prism-plugin
 
 build_script:
   - hexo clean
