@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_02】获取并安装STM32CubeMX
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 2106737533
 date: 2019-07-23 10:48:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍如何获取并安装STM32CubeMX。

@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_11】使用通用定时器闪烁LED
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 1598873035
 date: 2019-08-01 10:48:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的通用定时器外设，以中断的方式使LED闪烁。

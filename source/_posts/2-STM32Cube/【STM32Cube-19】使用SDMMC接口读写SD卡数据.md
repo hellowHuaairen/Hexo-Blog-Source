@@ -1,12 +1,9 @@
 ---
 title: 【STM32Cube-19】使用SDMMC接口读写SD卡数据
+tags: STM32CubeMX SD Card SDMMC接口
+categories: STM32CubeMX
+abbrlink: 3022954032
 date: 2019-08-09 09:48:56
-tags:
-    STM32CubeMX
-    SD Card
-    SDMMC接口
-categories:
-    STM32CubeMX
 ---
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件SDMMC外设读取SD卡数据。

@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_09】重定向printf函数到串口输出的多种方法
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 2251182441
 date: 2019-07-30 09:00:00
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 本文详细的介绍了如何重定向printf输出到串口输出的多种方法，包括调用MDK微库（MicroLib）的方法，调用标准库的方法，以及适用于 `GNUC` 系列编译器的方法。
 

@@ -1,10 +1,9 @@
 ---
 title: 如何通俗的理解CRC校验并用C语言实现
+tags: CRC校验
+categories: 算法实现
+abbrlink: 1935373145
 date: 2019-08-06 10:16:24
-tags:
-    CRC校验
-categories:
-    算法实现
 ---
 
 本篇文章通俗的讲解了何谓CRC？如何生成CRC码以及如何使用CRC码校验，最后采用**多种思路**用C语言实现CRC校验。

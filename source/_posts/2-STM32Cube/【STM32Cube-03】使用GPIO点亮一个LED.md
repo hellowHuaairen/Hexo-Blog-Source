@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_03】使用GPIO点亮一个LED
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 2046075734
 date: 2019-07-24 10:00:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的GPIO，并点亮一个LED。

@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_06】使用USART发送和接收数据（查询模式）
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 2064921339
 date: 2019-07-27 09:00:00
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的USART，并使用查询模式发送数据，使用查询模式接收数据。

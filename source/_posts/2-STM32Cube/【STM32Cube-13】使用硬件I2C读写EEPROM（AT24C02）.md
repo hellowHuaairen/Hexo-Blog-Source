@@ -1,11 +1,9 @@
 ---
 title: 【STM32Cube_13】使用硬件I2C读写EEPROM（AT24C02）
+tags: STM32CubeMX EEPROM
+categories: STM32CubeMX
+abbrlink: 3523891062
 date: 2019-08-03 10:04:56
-tags:
-    STM32CubeMX
-    EEPROM
-categories:
-    STM32CubeMX
 ---
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件I2C外设读取EEPROM数据（以AT24C02为例）。

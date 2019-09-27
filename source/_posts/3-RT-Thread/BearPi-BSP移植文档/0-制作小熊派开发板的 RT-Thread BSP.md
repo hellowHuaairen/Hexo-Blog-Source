@@ -1,11 +1,9 @@
 ---
 title: 制作小熊派开发板的 RT-Thread BSP
+tags: STM32CubeMX RT-Thread
+categories: RT-Thread
+abbrlink: 1205500533
 date: 2019-08-11 16:48:56
-tags:
-    STM32CubeMX
-    RT-Thread
-categories:
-    RT-Thread
 ---
 本篇文章详细的讲述了如何制作小熊派开发板（STM32L431RCT6）的RT-Thread BSP。
 

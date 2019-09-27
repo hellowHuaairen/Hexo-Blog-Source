@@ -1,12 +1,9 @@
 ---
 title: 【STM32Cube_17】使用硬件SPI驱动TFT-LCD（ST7789）
+tags: STM32CubeMX TFT-LCD SPI总线
+categories: STM32CubeMX
+abbrlink: 4251315252
 date: 2019-08-07 09:48:56
-tags:
-    STM32CubeMX
-    TFT-LCD
-    SPI总线
-categories:
-    STM32CubeMX
 ---
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件SPI外设与ST7789通信，驱动16bit TFT-LCD 屏幕。
 <!--more-->

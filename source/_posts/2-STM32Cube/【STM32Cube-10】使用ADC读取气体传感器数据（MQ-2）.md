@@ -1,11 +1,9 @@
 ---
 title: 【STM32Cube_10】使用ADC读取气体传感器数据（MQ-2）
+tags: STM32CubeMX 气体传感器MQ-2
+categories: STM32CubeMX
+abbrlink: 1249993360
 date: 2019-07-31 16:48:56
-tags:
-    STM32CubeMX
-    气体传感器MQ-2
-categories:
-    STM32CubeMX
 ---
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的ADC外设，读取MQ-2气体传感器的数据并通过串口发送。

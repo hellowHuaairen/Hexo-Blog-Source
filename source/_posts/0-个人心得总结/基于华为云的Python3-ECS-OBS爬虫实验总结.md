@@ -1,11 +1,12 @@
 ---
 title: 基于华为云的Python3-ECS-OBS爬虫实验总结
-date: 2019-06-18 11:33:10
 tags:
-- Python3 
-- 爬虫 
-- 心得体会
+  - Python3
+  - 爬虫
+  - 心得体会
 categories: 心得分享
+abbrlink: 417285848
+date: 2019-06-18 11:33:10
 ---
 俗话说的好，人为财死鸟为食亡，最近在手环的驱动下参加了一个华为云的微认证（[使用Python爬虫抓取图片](https://edu.huaweicloud.com/certifications/d1e210806e2640938f9d7a0923410565)）,在短短的一个小时内感觉收货颇丰，总结如下。
 

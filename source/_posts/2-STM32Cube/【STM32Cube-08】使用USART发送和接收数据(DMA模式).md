@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_08】使用USART发送和接收数据（DMA模式）
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 1606619423
 date: 2019-07-29 09:00:00
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的USART，并使用**DMA模式**发送数据和接收数据。

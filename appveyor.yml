@@ -10,6 +10,7 @@ install:
   - npm install hexo-cli -g
   - npm install
   - npm i -S hexo-prism-plugin
+  - npm install hexo-abbrlink --save
 
 build_script:
   - hexo clean

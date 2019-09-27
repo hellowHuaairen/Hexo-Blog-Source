@@ -1,11 +1,9 @@
 ---
 title: 【STM32Cube_14】使用硬件I2C读写环境光强度传感器（BH1750）
+tags: STM32CubeMX BH1750
+categories: STM32CubeMX
+abbrlink: 1561092257
 date: 2019-08-04 10:04:56
-tags:
-    STM32CubeMX
-    BH1750
-categories:
-    STM32CubeMX
 ---
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件I2C外设读取环境光强度传感器数据（BH1750）。

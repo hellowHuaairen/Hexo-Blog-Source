@@ -1,13 +1,9 @@
 ---
 title: 【STM32Cube_16】使用硬件CRC校验数据（以SHT30为例）
+tags: STM32CubeMX 温湿度传感器 SHT30 CRC校验
+categories: STM32CubeMX
+abbrlink: 842429667
 date: 2019-08-06 09:48:56
-tags:
-    STM32CubeMX
-    温湿度传感器
-    SHT30
-    CRC校验
-categories:
-    STM32CubeMX
 ---
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的硬件CRC外设校验数据，并用SHT30温湿度传感器为例检查是否可以正确校验。

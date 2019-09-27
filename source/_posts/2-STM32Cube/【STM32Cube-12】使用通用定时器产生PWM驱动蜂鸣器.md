@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_12】使用通用定时器产生PWM驱动蜂鸣器
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 650884631
 date: 2019-08-02 15:04:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇详细的记录了如何使用STM32CubeMX配置STM32L431RCT6的通用定时器外设，产生PWM驱动无源蜂鸣器。

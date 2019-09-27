@@ -15,8 +15,15 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.mculover666.cn
 root: /
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+#permalink: :year/:month/:day/:title/
+#permalink_defaults:
+# addr two settings:
+#alg -- Algorithm (currently support crc16 and crc32, which crc16 is default)
+#rep -- Represent (the generated link could be presented in hex or dec value)
+permalink: posts/:abbrlink/
+abbrlink:
+  alg: crc32 #support crc16(default) and crc32
+  rep: dec   #support dec(default) and hex
 
 # Directory
 source_dir: source

@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_07】使用USART发送和接收数据（中断模式）
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 1803605667
 date: 2019-07-28 09:00:00
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的USART，并使用**中断模式**发送和接收数据。

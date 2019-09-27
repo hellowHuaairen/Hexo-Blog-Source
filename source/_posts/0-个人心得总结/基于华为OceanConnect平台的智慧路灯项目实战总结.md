@@ -1,11 +1,9 @@
 ---
 title: 基于华为OceanConnect平台的智慧路灯项目实战总结
+tags: 华为物联网平台OceanConnect IoT
+categories: IoT开发
+abbrlink: 3630469501
 date: 2019-07-21 10:48:56
-tags:
-    华为物联网平台OceanConnect
-    IoT
-categories:
-    IoT开发
 ---
 这周参加了华为云举办的[7天玩转IoT物联网实战营]活动，短短的一周时间内对物联网项目的整个开发流程有了一个全新的认识，现作以总结，如下~
 

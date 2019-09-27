@@ -1,12 +1,10 @@
 ---
 title: STM32CubeMX系列教程
+tags: STM32CubeMX
+categories: STM32CubeMX
+top: true
+abbrlink: 578764034
 date: 2019-08-10 09:48:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
-top:
-    true
 ---
 
 秒变 STM32 大神，STM32CubeMX你值得拥有！

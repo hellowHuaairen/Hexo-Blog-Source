@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_04】使用GPIO进行按键检测
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 1763774108
 date: 2019-07-25 10:00:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的GPIO，并扫描检测按键。

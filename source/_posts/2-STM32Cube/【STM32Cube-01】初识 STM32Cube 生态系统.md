@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_01】初识 STM32Cube 生态系统
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 1350058916
 date: 2019-07-22 16:48:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍STM32Cube生态系统。

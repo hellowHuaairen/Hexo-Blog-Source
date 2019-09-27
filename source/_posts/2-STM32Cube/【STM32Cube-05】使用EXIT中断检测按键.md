@@ -1,10 +1,9 @@
 ---
 title: 【STM32Cube_05】使用EXIT中断检测按键
+tags: STM32CubeMX
+categories: STM32CubeMX
+abbrlink: 2504113390
 date: 2019-07-26 10:00:56
-tags:
-    STM32CubeMX
-categories:
-    STM32CubeMX
 ---
 
 本篇文章主要介绍如何使用STM32CubeMX初始化STM32L431RCT6的EXIT检测按键，讲述了一些NVIC的小知识，并一步一步探索了HAL库的中断处理机制。
