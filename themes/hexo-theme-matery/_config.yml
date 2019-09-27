@@ -463,8 +463,8 @@ subtitle:
   startDelay: 300 # 开始延迟
   typeSpeed: 100 # 打字速度
   backSpeed: 50 # 删除速度
-  sub1: 从来没有真正的绝境, 只有心灵的迷途
-  sub2: Never really desperate, only the lost of the soul
+  sub1: ARM | STM32 | FPGA
+  sub2: RTOS | Liunx | IoT
   
 # 手机二级菜单.
 navMenu:
