@@ -224,7 +224,7 @@ header .brand-logo .logo-img {
 }
 
 header .brand-logo .logo-span {
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
 header .button-collapse i {
@@ -392,7 +392,7 @@ header .go-back i {
 }
 
 .bg-cover .title {
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 1.85em;
     margin-bottom: 20px;
     position: relative;
